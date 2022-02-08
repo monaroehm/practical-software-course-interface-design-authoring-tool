@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="menu_ap" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+    <children>
+        <VBox alignment="CENTER" layoutX="100.0" layoutY="100.0" spacing="20.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#redirectAchievementButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Achievements" />
+                <Button mnemonicParsing="false" onAction="#redirectItemsButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Items">
+               <VBox.margin>
+                  <Insets top="-10.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#redirectMessagesButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Messages">
+                    <VBox.margin>
+                        <Insets top="-10.0" />
+                    </VBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#redirectPlayedGameButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Played Games">
+               <VBox.margin>
+                  <Insets top="-10.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#redirectProfilepictureButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Profile Pictures">
+               <VBox.margin>
+                  <Insets top="-10.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" onMouseClicked="#redirectUsersButtonPressed" prefWidth="250.0" text="Users" textAlignment="CENTER">
+               <VBox.margin>
+                   <Insets top="-10.0" />
+               </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#redirectFriendsButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Friends" />
+                <Button mnemonicParsing="false" onAction="#redirectUserHasItemButtonPressed" prefHeight="25.0" prefWidth="250.0" text="User - Items">
+                    <VBox.margin>
+                        <Insets top="-10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#redirectUserHasAchievementButtonPressed" prefHeight="25.0" prefWidth="250.0" text="User - Achievements">
+                    <VBox.margin>
+                        <Insets top="-10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#redirectStatisticsButtonPressed" prefHeight="25.0" prefWidth="250.0" text="Statistics" />
+            </children>
+        </VBox>
+        <Text fill="#005e69" layoutX="382.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu">
+            <font>
+                <Font name="System Bold" size="29.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

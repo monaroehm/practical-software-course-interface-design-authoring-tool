@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayedGamesController">
+    <children>
+        <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonPushed" text="&lt; back">
+            <font>
+                <Font size="11.0" />
+            </font></Button>
+        <Text fill="#005e69" layoutX="355.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played">
+            <font>
+                <Font name="System Bold" size="29.0" />
+            </font></Text>
+        <Pane layoutX="150.0" layoutY="79.0" prefHeight="250.0" prefWidth="600.0">
+            <children>
+                <TableView fx:id="playedGamesTable" prefHeight="250.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="game_id" prefWidth="50.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="game_id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="User_user_id" prefWidth="75.0" text="UserID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="user_id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="date" onEditCommit="#changeDateCellEvent" prefWidth="125.0" text="Time">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="date" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="duration" onEditCommit="#changeDurationCellEvent" prefWidth="125.0" text="Duration">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="duration" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="score" onEditCommit="#changeScoreCellEvent" prefWidth="125.0" text="Score">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="score" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <GridPane hgap="10.0" layoutX="150.0" layoutY="380.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="durationTextField" prefHeight="25.0" prefWidth="90.0" promptText="duration" GridPane.rowIndex="1" />
+                <TextField fx:id="scoreTextField" prefHeight="25.0" prefWidth="90.0" promptText="score" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="userIDTextField" prefHeight="25.0" prefWidth="90.0" promptText="user_id" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label alignment="BOTTOM_LEFT" prefHeight="52.0" prefWidth="145.0" text="Duration:" />
+                <Button mnemonicParsing="false" onAction="#newGameButtonPushed" text="Create" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Button>
+                <Label alignment="BOTTOM_LEFT" prefHeight="38.0" prefWidth="118.0" text="Score:" GridPane.columnIndex="1" />
+                <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="145.0" text="UserID:" GridPane.columnIndex="2" />
+            </children>
+        </GridPane>
+        <HBox layoutX="150.0" layoutY="335.0" prefHeight="25.0" prefWidth="538.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#deleteGameButtonPushed" text="Delete">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

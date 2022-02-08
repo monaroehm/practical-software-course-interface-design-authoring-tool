@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsersController">
+    <children>
+      <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonPushed" text="&lt; back">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Text fill="#005e69" layoutX="413.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Users">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font></Text>
+      <Pane layoutX="150.0" layoutY="79.0" prefHeight="250.0" prefWidth="600.0">
+         <children>
+              <TableView fx:id="usersTable" prefHeight="250.0" prefWidth="600.0">
+                  <columns>
+                      <TableColumn fx:id="id" prefWidth="50.0" text="ID">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="user_id" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="username" onEditCommit="#changeNameCellEvent" prefWidth="105.0" text="Username">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="username" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="password" onEditCommit="#changePasswordCellEvent" prefWidth="105.0" text="Password">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="password" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="score" onEditCommit="#changeScoreCellEvent" prefWidth="75.0" text="Score">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="score" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="highscore" onEditCommit="#changeHighscoreCellEvent" prefWidth="65.0" text="Highscore">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="highscore" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="gamesPlayed" onEditCommit="#changeGamesPlayedCellEvent" prefWidth="85.0" text="Played Games">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="gamesPlayed" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="profilePicture" onEditCommit="#changeProfilePictureCellEvent" prefWidth="95.0" text="ProfilePictureID">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="profilepicture_picture_id" />
+                          </cellValueFactory>
+                      </TableColumn>
+                  </columns>
+              </TableView>
+         </children>
+      </Pane>
+      <GridPane hgap="10.0" layoutX="150.0" layoutY="380.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="70.0" prefWidth="131.0" text="Password:" GridPane.columnIndex="1" />
+            <TextField fx:id="passwordTextField" prefHeight="25.0" prefWidth="90.0" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="usernameTextField" prefHeight="25.0" prefWidth="90.0" promptText="username" GridPane.rowIndex="1" />
+            <Label alignment="BOTTOM_LEFT" prefHeight="52.0" prefWidth="145.0" text="Username:" />
+            <Button mnemonicParsing="false" onAction="#newPersonButtonPushed" text="Create" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <HBox layoutX="150.0" layoutY="335.0" prefHeight="25.0" prefWidth="538.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#deleteUserButtonPushed" text="Delete">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>
